@@ -6,7 +6,8 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline';
 export default function Page(): JSX.Element {
   return (
     <main className="flex flex-col gap-30 items-center p-6">
-      <div className="flex items-center p-x-2 p-2">
+      Hello
+      {/* <div className="flex items-center p-x-2 p-2">
         <Image
           src="/images/home-image.png"
           width={360}
@@ -16,7 +17,7 @@ export default function Page(): JSX.Element {
           alt="Photograph showing temperature and humidity sensor"
         />
       </div>
-      <div className="flex items-center p-x-2 p-2 mb-25">
+      <div className="flex items-center p-x-2 p-2">
         <Link
           href="/monitoring"
           className="flex items-center gap-5 self-start rounded-lg bg-green-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-green-800"
@@ -24,7 +25,7 @@ export default function Page(): JSX.Element {
           <span>Start online monitoring</span>
           <ArrowRightIcon className="w-5 md:w-6 text-black" />
         </Link>
-      </div>
+      </div> */}
     </main>
   );
 }
