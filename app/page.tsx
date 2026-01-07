@@ -5,7 +5,7 @@ import Button from './ui/components/button';
 
 export default function Page(): JSX.Element {
   return (
-    <main className="flex flex-col gap-30 items-center p-6">
+    <main className="flex max-w-full justify-between flex-col gap-30 items-center p-6">
       <div className="flex items-center p-x-2 p-2">
         <Image
           src="/images/home-image.png"

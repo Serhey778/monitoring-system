@@ -1,9 +1,10 @@
 import { JSX } from 'react';
 import { CircleStackIcon } from '@heroicons/react/24/outline';
+
 export default function Sensor({
   type,
-  temperature,
-  humidity,
+  temperature = -9999,
+  humidity = -9999,
 }: {
   type: 'temperature' | 'humidity';
   temperature: number;
