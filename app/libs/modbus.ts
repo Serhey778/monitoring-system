@@ -1,7 +1,10 @@
 import ModbusRTU from 'modbus-serial';
 import { Server as SocketIOServer } from 'socket.io';
+import http from 'http';
+import { app } from '../../server/src/index';
 
-export const socketServer = new SocketIOServer();
+const server = http.createServer(app);
+export const socketServer = new SocketIOServer(server);
 
 // IP-адреса ваших датчиков
 const tempSensorIP = '192.168.1.10';
@@ -38,10 +41,6 @@ export async function sensorsPolling(): Promise<void> {
       const humidData = await humidSensor.readHoldingRegisters(0, 10);
 
       // Сохранение в БД
-      await pool.query(
-        'INSERT INTO sensor_data (temperature, humidity) VALUES ($1, $2)',
-        [tempData.data[0], humidData.data[0]]
-      );
 
       // Отправляем данные клиентам через WebSocket
       socketServer.emit('sensorsData', {
