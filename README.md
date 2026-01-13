@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# User-interfase
 
-## Getting Started
+Welcome to the Monitoring-system!
+This project developed with the help of java script, type script, frameworks: React, Next.js, TailwindCSS, postgresSQL and Neon database. The moniring-system allows you to track IP sensor values in real time and graphically display their values in the form of diagrams for a certain period of time.
 
-First, run the development server:
+## Running the App in Development Mode.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Navigate to the root directory of the project.
+2. Open new terminal window.
+3. Install User-interfase dependencies by running the following command:
+   > npm install
+4. Run App in the development mode with hot reload feature:
+   > npm run dev
+   > npm start (running the App in Production Mode)
+5. Server will be running at the 'http:/127.0.0.1:3000/'('http:/localhost:3000/').
+6. Open your browser and enter the above URL.
+7. The application is ready to work.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Documentation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### The model in the Neon database contains:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+type Data = {
+id: string;
+temp: number;
+humid: number;
+created_at: string;
+};
 
-## Learn More
+### App endpoints:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. $/ - Home page.
+2. $/monitoring - online sensors readings.
+3. $/momitoring/graph - diagrams with sensor readings for different periods of time.
