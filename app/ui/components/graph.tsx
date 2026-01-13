@@ -40,7 +40,6 @@ export default function Graph({
           style={{ height: `${chartHeight}px` }}
         >
           {dataDB.map((data) => (
-            //index % Math.floor(dataDB.length / 100) === 0 &&
             <div
               key={data.id}
               className="relative flex-none flex-col w-3 items-center"
