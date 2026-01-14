@@ -28,7 +28,7 @@ export default function Graph({
       </h2>
       <div className="flex flex-row w-full flex-wrap overflow-hidden rounded-xl bg-gray-50 justify-center">
         <div
-          className=" w-10 flex-col justify-between text-sm text-black flex"
+          className=" w-10 mb-4 flex-col justify-between text-sm text-black flex"
           style={{ height: `${chartHeight}px` }}
         >
           {yAxisLabels.map((label) => (
