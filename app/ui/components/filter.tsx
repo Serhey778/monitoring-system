@@ -66,7 +66,7 @@ export default function Filter() {
             id="date"
             name="data"
             type="date"
-            className="w-25 cursor-pointer "
+            className="w-20 cursor-pointer "
             placeholder="date"
             onChange={(event) => handleChange(event.target.value)}
             aria-describedby="date-error"
