@@ -8,7 +8,7 @@ export default function notFound(): JSX.Element {
       <h2 className="text-xl font-semibold">404 Not Found</h2>
       <p>Monitoring data not found in database.</p>
       <Link
-        href="/monitoring"
+        href="/monitoring/graph"
         className="mt-4 rounded-md bg-green-600 px-4 py-2 text-sm text-white transition-colors hover:bg-green-800"
       >
         Go Back
