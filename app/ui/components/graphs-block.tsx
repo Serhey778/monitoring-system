@@ -1,10 +1,8 @@
 import { notFound } from 'next/navigation';
 import { JSX } from 'react';
-import { Suspense } from 'react';
 import { getData } from '@/app/libs/fetching';
 import { generateYAxis } from '@/app/libs/utils';
 import Graph from './graph';
-import Skeleton from '@/app/ui/components/skeleton';
 
 export default async function GraphsBlock({
   query,
@@ -21,31 +19,22 @@ export default async function GraphsBlock({
     generateYAxis(dataDB, 'humid');
   return (
     <>
-      <Suspense
-        fallback={
-          <>
-            <Skeleton />
-            <Skeleton />
-          </>
-        }
-      >
-        <Graph
-          query={query}
-          dataDB={dataDB}
-          yAxisLabels={yAxisTempLabels}
-          topLabel={topTempLabel}
-          header="Temperatyre graph for"
-          monitoring="temp"
-        />
-        <Graph
-          query={query}
-          dataDB={dataDB}
-          yAxisLabels={yAxisHumidLabels}
-          topLabel={topHumidLabel}
-          header="Humidity graph for"
-          monitoring="humid"
-        />
-      </Suspense>
+      <Graph
+        query={query}
+        dataDB={dataDB}
+        yAxisLabels={yAxisTempLabels}
+        topLabel={topTempLabel}
+        header="Temperatyre graph for"
+        monitoring="temp"
+      />
+      <Graph
+        query={query}
+        dataDB={dataDB}
+        yAxisLabels={yAxisHumidLabels}
+        topLabel={topHumidLabel}
+        header="Humidity graph for"
+        monitoring="humid"
+      />
     </>
   );
 }

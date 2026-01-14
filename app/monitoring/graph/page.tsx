@@ -1,8 +1,10 @@
 import { JSX } from 'react';
+import { Suspense } from 'react';
 import Filter from '@/app/ui/components/filter';
 import Button from '@/app/ui/components/button';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import GraphsBlock from '@/app/ui/components/graphs-block';
+import Skeleton from '@/app/ui/components/skeleton';
 
 export default async function GraphPage(props: {
   searchParams?: Promise<{
@@ -15,7 +17,16 @@ export default async function GraphPage(props: {
   return (
     <>
       <Filter />
-      <GraphsBlock query={query} />
+      <Suspense
+        fallback={
+          <>
+            <Skeleton />
+            <Skeleton />
+          </>
+        }
+      >
+        <GraphsBlock query={query} />
+      </Suspense>
       <Button
         url="/monitoring"
         slot="Monitoring"
