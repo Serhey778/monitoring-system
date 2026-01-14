@@ -35,29 +35,31 @@ export default function Graph({
             <p key={label}>{label}</p>
           ))}
         </div>
-        <div
-          className=" flex w-83 flex-row overflow-hidden overflow-x-scroll whitespace-nowrap justify-start items-end rounded-md px-1 bg-white"
-          style={{ height: `${chartHeight}px` }}
-        >
-          {dataDB.map((data) => (
-            <div
-              key={data.id}
-              className="relative flex-none flex-col w-3 items-center"
-            >
+        <div className="overflow-hidden overflow-x-scroll">
+          <div
+            className=" flex w-83 flex-row  whitespace-nowrap justify-start items-end rounded-md px-1 bg-white"
+            style={{ height: `${chartHeight}px` }}
+          >
+            {dataDB.map((data) => (
               <div
-                className="bg-blue-300"
-                style={{
-                  height:
-                    monitoring === 'temp'
-                      ? `${(chartHeight / topLabel) * data.temp}px`
-                      : `${(chartHeight / topLabel) * data.humid}px`,
-                }}
-              ></div>
-              <p className="absolute -rotate-90 bottom-3 left-1/2 transform -translate-x-1/2 text-sm text-black">
-                {formattedHoursAndMinutes(data.created_at)}
-              </p>
-            </div>
-          ))}
+                key={data.id}
+                className="relative flex-none flex-col w-3 items-center"
+              >
+                <div
+                  className="bg-blue-300"
+                  style={{
+                    height:
+                      monitoring === 'temp'
+                        ? `${(chartHeight / topLabel) * data.temp}px`
+                        : `${(chartHeight / topLabel) * data.humid}px`,
+                  }}
+                ></div>
+                <p className="absolute -rotate-90 bottom-3 left-1/2 transform -translate-x-1/2 text-sm text-black">
+                  {formattedHoursAndMinutes(data.created_at)}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
