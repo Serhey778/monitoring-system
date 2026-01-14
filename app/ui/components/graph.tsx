@@ -37,7 +37,7 @@ export default function Graph({
         </div>
         <div className="overflow-hidden overflow-x-scroll">
           <div
-            className=" flex w-80 flex-row  whitespace-nowrap justify-start items-end rounded-md px-1 bg-white"
+            className=" flex w-75 flex-row  whitespace-nowrap justify-start items-end rounded-md px-1 bg-white"
             style={{ height: `${chartHeight}px` }}
           >
             {dataDB.map((data) => (
