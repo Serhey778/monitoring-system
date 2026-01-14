@@ -21,6 +21,7 @@ export default function Filter() {
       <div className="flex flex-row justify-center items-center md:gap-7 md:px-2 md:py-2 bg-gray-100 rounded-md border text-sm md:text-ml ">
         <legend className=" flex flex-row">
           <FunnelIcon className="w-5 mx-1 hidden md:block" />
+          Filter:
         </legend>
         <label htmlFor="1hour" className="flex flex-row">
           <p>1hour: </p>
@@ -57,12 +58,15 @@ export default function Filter() {
             onChange={() => handleChange('24hours')}
           />
         </label>
-        <label htmlFor="date" className="flex flex-row ml-2">
+        <label
+          htmlFor="date"
+          className="flex flex-row ml-2 border-1 border-black"
+        >
           <input
             id="date"
             name="data"
             type="date"
-            className="w-25 cursor-pointer"
+            className="w-25 cursor-pointer "
             placeholder="date"
             onChange={(event) => handleChange(event.target.value)}
             aria-describedby="date-error"
