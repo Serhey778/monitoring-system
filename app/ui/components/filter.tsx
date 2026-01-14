@@ -21,7 +21,6 @@ export default function Filter() {
       <div className="flex flex-row justify-center items-center md:gap-7 md:px-2 md:py-2 bg-gray-100 rounded-md border text-sm md:text-ml ">
         <legend className=" flex flex-row">
           <FunnelIcon className="w-5 mx-1 hidden md:block" />
-          Filter:
         </legend>
         <label htmlFor="1hour" className="flex flex-row">
           <p>1hour: </p>
@@ -35,8 +34,8 @@ export default function Filter() {
             aria-describedby="likes-error"
           />
         </label>
-        <label htmlFor="6hours" className="flex flex-row ml-2">
-          <p>6hours: </p>
+        <label htmlFor="6hours" className="flex flex-row">
+          <p>6hours:</p>
           <input
             id="6hours"
             name="data"
@@ -47,8 +46,8 @@ export default function Filter() {
             aria-describedby="likes-error"
           />
         </label>
-        <label htmlFor="24hours" className="flex flex-row ml-2">
-          <p>24hours: </p>
+        <label htmlFor="24hours" className="flex flex-row">
+          <p>24hours:</p>
           <input
             id="24hours"
             name="data"
@@ -66,7 +65,7 @@ export default function Filter() {
             id="date"
             name="data"
             type="date"
-            className="w-15 cursor-pointer "
+            className="w-25 cursor-pointer "
             placeholder="date"
             onChange={(event) => handleChange(event.target.value)}
             aria-describedby="date-error"
