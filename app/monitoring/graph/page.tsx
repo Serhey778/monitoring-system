@@ -12,7 +12,7 @@ export default async function GraphPage(props: {
   }>;
 }): Promise<JSX.Element> {
   const searchParams = await props.searchParams;
-  const query = searchParams?.query || '';
+  const query = searchParams?.query || '1hour';
 
   return (
     <>
